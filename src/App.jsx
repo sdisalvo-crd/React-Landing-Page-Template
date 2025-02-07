@@ -21,15 +21,27 @@ const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {
     setLandingPageData(JsonData);
+  }, []);
 
-    var _mtm = (window._mtm = window._mtm || []);
-    _mtm.push({ "mtm.startTime": new Date().getTime(), event: "mtm.Start" });
-    var d = document,
-      g = d.createElement("script"),
-      s = d.getElementsByTagName("script")[0];
-    g.async = true;
-    g.src = "http://localhost/js/container_SG4TbjDr.js";
-    s.parentNode.insertBefore(g, s);
+  useEffect(() => {
+    var _paq = (window._paq = window._paq || []);
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+    _paq.push(["setCookieDomain", "*.sdisalvoreactapp.netlify.app"]);
+    _paq.push(["setDoNotTrack", true]);
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+    (function () {
+      var u = "//localhost/";
+      _paq.push(["setTrackerUrl", u + "matomo.php"]);
+      _paq.push(["setSiteId", "3"]);
+      var d = document,
+        g = d.createElement("script"),
+        s = d.getElementsByTagName("script")[0];
+      g.async = true;
+      g.src = u + "matomo.js";
+      s.parentNode.insertBefore(g, s);
+    })();
   }, []);
 
   return (
