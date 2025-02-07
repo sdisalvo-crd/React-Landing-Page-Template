@@ -10,7 +10,7 @@ ReactDOM.render(
       <p>
         <img
           referrerpolicy="no-referrer-when-downgrade"
-          src="//localhost/matomo.php?idsite=3&amp;rec=1"
+          src="https://sdisalvoreactapp.netlify.app/matomo.php?idsite=3&amp;rec=1"
           style={{ border: 0 }}
           alt=""
         />
